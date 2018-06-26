@@ -12,12 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('page.home');
 });
 
 Route::get('/category', function () {
     $data= array("pops" => App\POPS::get(), "nico" => App\NICO::get(), "toho" => App\TOHO::get(), "sega" => App\SEGA::get() ,"game" => App\GAME::get(), "orig" => App\ORIG::get());
-    return view('songbycategory')->with('data', $data);
+    return view('page.songbycategory')->with('data', $data);
 });
 
 Route::get('/category/{catname}', function ($catname) {
