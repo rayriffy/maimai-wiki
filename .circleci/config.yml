@@ -13,7 +13,7 @@ jobs:
           name: Install required packages
           command: |
             apk update
-            apk add libpng-dev
+            apk add libpng-dev alpine-sdk
       - run:
           name: Composer
           command: |
