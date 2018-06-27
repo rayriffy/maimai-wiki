@@ -13,6 +13,7 @@ jobs:
           MYSQL_USER: homestead
           MYSQL_PASSWORD: secret
           MYSQL_DATABASE: homestead
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
     steps:
       - checkout
       - run:
