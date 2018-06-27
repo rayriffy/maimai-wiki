@@ -30,6 +30,10 @@ jobs:
           command: |
             yarn run prod
       - run:
+          name: Start MySQL
+          command: |
+            /usr/bin/mysqld --user=mysql --console
+      - run:
           name: Migrate Database
           command: |
             php artisan migrate --force
