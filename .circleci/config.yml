@@ -1,0 +1,45 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/maiwiki
+    docker:
+      - image: rayriffy/composer-yarn:latest
+        environment:
+          DEPLOY_HOST: $DEPLOY_HOST
+    steps:
+      - checkout
+      - run:
+          name: Composer
+          command: |
+            composer install
+      - run:
+          name: Install Packages
+          command: |
+            yarn
+      - run:
+          name: Build script
+          command: |
+            yarn run prod
+  deploy:
+    machine:
+        enabled: true
+    working_directory: ~/maiwiki
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "c7:29:52:e0:f0:33:ca:91:1b:30:3a:96:1f:34:a7:fd"
+      - run:
+          name: Deploy to Server
+          command: |
+            ssh -i ~/.ssh/id_rsa_c72952e0f033ca911b303a961f34a7fd $DEPLOY_HOST './deploy.sh -maiwiki'
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: release
