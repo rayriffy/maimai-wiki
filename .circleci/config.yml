@@ -21,6 +21,14 @@ jobs:
           name: Build script
           command: |
             yarn run prod
+      - run:
+          name: Migrate Database
+          command: |
+            php artisan migrate
+      - run:
+          name: Seed Database
+          command: |
+            php artisan db:seed
   deploy:
     machine:
         enabled: true
