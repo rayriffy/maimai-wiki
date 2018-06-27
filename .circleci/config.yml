@@ -32,7 +32,7 @@ jobs:
       - run:
           name: Start MySQL
           command: |
-            rc-service mysqld start
+            /etc/init.d/mysqld start
       - run:
           name: Migrate Database
           command: |
