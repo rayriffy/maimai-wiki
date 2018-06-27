@@ -32,7 +32,7 @@ jobs:
       - run:
           name: Start MySQL
           command: |
-            /usr/bin/mysqld --user=mysql --console
+            /usr/bin/mysqld --user=mysql
       - run:
           name: Migrate Database
           command: |
