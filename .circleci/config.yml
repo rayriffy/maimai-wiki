@@ -10,11 +10,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install required packages
+          name: Install required packages & Configuration
           command: |
-            apk update && apk add alpine-sdk php7-session php7-mysqli
+            apk update && apk add alpine-sdk
       - run:
-          name: Copy .env file
+          name: Copy .env.examples file
           command: |
             cp .env.example .env
       - run:
