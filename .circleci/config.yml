@@ -33,7 +33,7 @@ jobs:
       - run:
           name: Migrate Database
           command: |
-            php artisan migrate
+            php artisan migrate --force
       - run:
           name: Seed Database
           command: |
