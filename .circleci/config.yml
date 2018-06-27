@@ -14,9 +14,10 @@ jobs:
           command: |
             apk update && apk add alpine-sdk
       - run:
-          name: Copy .env.examples file
+          name: Config .env file
           command: |
             cp .env.example .env
+            php artisan key:generate
       - run:
           name: Install Composer Packages
           command: |
