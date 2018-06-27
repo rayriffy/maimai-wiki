@@ -15,6 +15,10 @@ jobs:
             apk update
             apk add libpng-dev alpine-sdk
       - run:
+          name: Copy .env file
+          command: |
+            cp .env.example .env
+      - run:
           name: Composer
           command: |
             composer install
