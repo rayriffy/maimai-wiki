@@ -17,7 +17,6 @@ jobs:
           name: Config .env file
           command: |
             cp .env.example .env
-            php artisan key:generate
       - run:
           name: Install Composer Packages
           command: |
@@ -31,9 +30,9 @@ jobs:
           command: |
             yarn run prod
       - run:
-          name: Start MySQL
+          name: Generate Key
           command: |
-            /etc/init.d/mysqld start
+            php artisan key:generate
       - run:
           name: Migrate Database
           command: |
