@@ -19,11 +19,11 @@ jobs:
           command: |
             cp .env.example .env
       - run:
-          name: Composer
+          name: Install Composer Packages
           command: |
             composer install
       - run:
-          name: Install Packages
+          name: Install JavaScript Packages
           command: |
             yarn
       - run:
