@@ -13,7 +13,7 @@ jobs:
           name: Install required packages
           command: |
             apk update
-            apk add libpng-dev alpine-sdk php7-json php7-mbstring php7-ctype php7-openssl php7-pdo php7-tokenizer php7-xml
+            apk add libpng-dev alpine-sdk
       - run:
           name: Copy .env file
           command: |
