@@ -11,7 +11,7 @@ jobs:
         command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
         environment:
           MYSQL_USER: homestead
-          MYSQL_ROOT_PASSWORD: secret
+          MYSQL_PASSWORD: secret
           MYSQL_DATABASE: homestead
     steps:
       - checkout
