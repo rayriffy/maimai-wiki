@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $data_get=file_get_contents('https://cdn.rawgit.com/rayriffy/maimai-json/8b6c8294/maimai.json');
+        $data_get=file_get_contents('https://cdn.rawgit.com/rayriffy/maimai-json/be7cbecc/seed.json');
         $json_a = json_decode($data_get, true);
         foreach($json_a['pops'] as $dat) {
             $pops = new App\POPS;
