@@ -51,25 +51,25 @@ Route::get('/category/{catname}', function ($catname) {
     }
 });
 
-Route::get('/song/{catname}/{song_name}', function ($catname, $song_name) {
+Route::get('/song/{catname}/{id}', function ($catname, $id) {
     switch ($catname) {
       case 'pops':
-        $res = App\POPS::where('name_jp', $song_name)->get();
+        $res = App\POPS::where('id', $id)->get();
         break;
       case 'nico':
-        $res = App\NICO::where('name_jp', $song_name)->get();
+        $res = App\NICO::where('id', $id)->get();
         break;
       case 'toho':
-        $res = App\TOHO::where('name_jp', $song_name)->get();
+        $res = App\TOHO::where('id', $id)->get();
         break;
       case 'sega':
-        $res = App\SEGA::where('name_jp', $song_name)->get();
+        $res = App\SEGA::where('id', $id)->get();
         break;
       case 'game':
-        $res = App\GAME::where('name_jp', $song_name)->get();
+        $res = App\GAME::where('id', $id)->get();
         break;
       case 'orig':
-        $res = App\ORIG::where('name_jp', $song_name)->get();
+        $res = App\ORIG::where('id', $id)->get();
         break;
       default:
         $res = null;
