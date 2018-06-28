@@ -10,7 +10,7 @@ class TOHO extends Model
     //
 
     use SoftDeletes;
-    
+
     protected $table = 'toho';
 
     protected $primaryKey = 'id';

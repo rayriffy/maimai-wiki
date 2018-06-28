@@ -10,7 +10,7 @@ class SEGA extends Model
     //
 
     use SoftDeletes;
-    
+
     protected $table = 'sega';
 
     protected $primaryKey = 'id';

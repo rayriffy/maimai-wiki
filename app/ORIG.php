@@ -10,7 +10,7 @@ class ORIG extends Model
     //
 
     use SoftDeletes;
-    
+
     protected $table = 'orig';
 
     protected $primaryKey = 'id';
