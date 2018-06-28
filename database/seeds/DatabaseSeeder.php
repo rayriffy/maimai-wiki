@@ -11,10 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $data_get=file_get_contents('https://cdn.rawgit.com/rayriffy/maimai-json/be7cbecc/seed.json');
+        $data_get = file_get_contents('https://cdn.rawgit.com/rayriffy/maimai-json/be7cbecc/seed.json');
         $json_a = json_decode($data_get, true);
-        foreach($json_a['pops'] as $dat) {
-            $pops = new App\POPS;
+        foreach ($json_a['pops'] as $dat) {
+            $pops = new App\POPS();
             $pops->name_en = $dat['name_en'];
             $pops->name_jp = $dat['name_jp'];
             $pops->artist_en = $dat['artist_en'];
@@ -33,8 +33,8 @@ class DatabaseSeeder extends Seeder
             $pops->regionlocked = $dat['regionlocked'];
             $pops->save();
         }
-        foreach($json_a['nico'] as $dat) {
-            $nico = new App\NICO;
+        foreach ($json_a['nico'] as $dat) {
+            $nico = new App\NICO();
             $nico->name_en = $dat['name_en'];
             $nico->name_jp = $dat['name_jp'];
             $nico->artist_en = $dat['artist_en'];
@@ -53,8 +53,8 @@ class DatabaseSeeder extends Seeder
             $nico->regionlocked = $dat['regionlocked'];
             $nico->save();
         }
-        foreach($json_a['toho'] as $dat) {
-            $toho = new App\TOHO;
+        foreach ($json_a['toho'] as $dat) {
+            $toho = new App\TOHO();
             $toho->name_en = $dat['name_en'];
             $toho->name_jp = $dat['name_jp'];
             $toho->artist_en = $dat['artist_en'];
@@ -73,8 +73,8 @@ class DatabaseSeeder extends Seeder
             $toho->regionlocked = $dat['regionlocked'];
             $toho->save();
         }
-        foreach($json_a['sega'] as $dat) {
-            $sega = new App\SEGA;
+        foreach ($json_a['sega'] as $dat) {
+            $sega = new App\SEGA();
             $sega->name_en = $dat['name_en'];
             $sega->name_jp = $dat['name_jp'];
             $sega->artist_en = $dat['artist_en'];
@@ -93,8 +93,8 @@ class DatabaseSeeder extends Seeder
             $sega->regionlocked = $dat['regionlocked'];
             $sega->save();
         }
-        foreach($json_a['game'] as $dat) {
-            $game = new App\GAME;
+        foreach ($json_a['game'] as $dat) {
+            $game = new App\GAME();
             $game->name_en = $dat['name_en'];
             $game->name_jp = $dat['name_jp'];
             $game->artist_en = $dat['artist_en'];
@@ -113,8 +113,8 @@ class DatabaseSeeder extends Seeder
             $game->regionlocked = $dat['regionlocked'];
             $game->save();
         }
-        foreach($json_a['orig'] as $dat) {
-            $orig = new App\ORIG;
+        foreach ($json_a['orig'] as $dat) {
+            $orig = new App\ORIG();
             $orig->name_en = $dat['name_en'];
             $orig->name_jp = $dat['name_jp'];
             $orig->artist_en = $dat['artist_en'];
