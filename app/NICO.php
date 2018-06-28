@@ -10,7 +10,7 @@ class NICO extends Model
     //
 
     use SoftDeletes;
-    
+
     protected $table = 'nico';
 
     protected $primaryKey = 'id';

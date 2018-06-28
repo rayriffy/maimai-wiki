@@ -10,7 +10,7 @@ class POPS extends Model
     //
 
     use SoftDeletes;
-    
+
     protected $table = 'pops';
 
     protected $primaryKey = 'id';
