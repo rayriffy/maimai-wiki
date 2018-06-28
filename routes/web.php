@@ -23,28 +23,28 @@ Route::get('/category', function () {
 
 Route::get('/category/{catname}', function ($catname) {
     switch ($catname) {
-      case "pops":
-        $res=App\POPS::get();
+      case 'pops':
+        $res = App\POPS::get();
         break;
-      case "nico":
-        $res=App\NICO::get();
+      case 'nico':
+        $res = App\NICO::get();
         break;
-      case "toho":
-        $res=App\TOHO::get();
+      case 'toho':
+        $res = App\TOHO::get();
         break;
-      case "sega":
-        $res=App\SEGA::get();
+      case 'sega':
+        $res = App\SEGA::get();
         break;
-      case "game":
-        $res=App\GAME::get();
+      case 'game':
+        $res = App\GAME::get();
         break;
-      case "orig":
-        $res=App\ORIG::get();
+      case 'orig':
+        $res = App\ORIG::get();
         break;
       default:
-        $res=null;
+        $res = null;
     }
-    if ($res!=null) {
+    if ($res != null) {
         return view('page.songsbycategory')->with('cat', $catname)->with('data', $res);
     } else {
         return('reject')->with('reason', 4001);
@@ -53,28 +53,28 @@ Route::get('/category/{catname}', function ($catname) {
 
 Route::get('/song/{catname}/{song_name}', function ($catname, $song_name) {
     switch ($catname) {
-      case "pops":
-        $res=App\POPS::where('name_jp', $song_name)->get();
+      case 'pops':
+        $res = App\POPS::where('name_jp', $song_name)->get();
         break;
-      case "nico":
-        $res=App\NICO::where('name_jp', $song_name)->get();
+      case 'nico':
+        $res = App\NICO::where('name_jp', $song_name)->get();
         break;
-      case "toho":
-        $res=App\TOHO::where('name_jp', $song_name)->get();
+      case 'toho':
+        $res = App\TOHO::where('name_jp', $song_name)->get();
         break;
-      case "sega":
-        $res=App\SEGA::where('name_jp', $song_name)->get();
+      case 'sega':
+        $res = App\SEGA::where('name_jp', $song_name)->get();
         break;
-      case "game":
-        $res=App\GAME::where('name_jp', $song_name)->get();
+      case 'game':
+        $res = App\GAME::where('name_jp', $song_name)->get();
         break;
-      case "orig":
-        $res=App\ORIG::where('name_jp', $song_name)->get();
+      case 'orig':
+        $res = App\ORIG::where('name_jp', $song_name)->get();
         break;
       default:
-        $res=null;
+        $res = null;
     }
-    if ($res!=null) {
+    if ($res != null) {
         return view('page.song')->with('cat', $catname)->with('data', $res);
     } else {
         return('reject')->with('reason', 4001);
