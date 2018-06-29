@@ -18,5 +18,12 @@
   @yield('content')
 
   <script src="/js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/js/sw.js');
+      });
+    }
+  </script>
 </body>
 </html>
