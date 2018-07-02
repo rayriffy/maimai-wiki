@@ -59,7 +59,7 @@ jobs:
       - run:
           name: Deploy Server
           command: |
-            ssh -i ~/.ssh/id_rsa_c72952e0f033ca911b303a961f34a7fd $DEPLOY_HOST 'cd ~/production/maiwiki.rayriffy.com && composer install && php71 artisan migrate && yarn && yarn run prod'
+            ssh -i ~/.ssh/id_rsa_c72952e0f033ca911b303a961f34a7fd $DEPLOY_HOST 'cd ~/production/maiwiki.rayriffy.com && git pull && composer install && php71 artisan migrate && yarn && yarn run prod'
 workflows:
   version: 2
   build-and-deploy:
