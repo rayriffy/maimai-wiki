@@ -19,12 +19,12 @@
                   <div class="row">
                     @foreach ($data['pops'] as $dat)
                     <div class="col xl2 l3 m4 s6">
-                      <div class="card small">
+                      <div class="card smal hoverable">
                         <div class="card-image">
                             <img class="lazy" alt="{{ $dat['name_en'] }}" data-src="{{ $dat['image_url'] }}">
                           </div>
                           <div class="card-content">
-                            <b>{{ $dat['name_en'] }}</b>
+                            <b class="truncate">{{ $dat['name_en'] }}</b>
                             <p>CONTENT</p>
                         </div>
                       </div>
@@ -39,12 +39,12 @@
                   <div class="row">
                     @foreach ($data['nico'] as $dat)
                     <div class="col xl2 l3 m4 s6">
-                      <div class="card small">
+                      <div class="card small hoverable">
                         <div class="card-image">
                             <img class="lazy" alt="{{ $dat['name_en'] }}" data-src="{{ $dat['image_url'] }}">
                           </div>
                           <div class="card-content">
-                            <b>{{ $dat['name_en'] }}</b>
+                            <b class="truncate">{{ $dat['name_en'] }}</b>
                             <p>CONTENT</p>
                         </div>
                       </div>
@@ -59,12 +59,12 @@
                   <div class="row">
                     @foreach ($data['toho'] as $dat)
                     <div class="col xl2 l3 m4 s6">
-                      <div class="card small">
+                      <div class="card small hoverable">
                         <div class="card-image">
                             <img class="lazy" alt="{{ $dat['name_en'] }}" data-src="{{ $dat['image_url'] }}">
                           </div>
                           <div class="card-content">
-                            <b>{{ $dat['name_en'] }}</b>
+                            <b class="truncate">{{ $dat['name_en'] }}</b>
                             <p>CONTENT</p>
                         </div>
                       </div>
@@ -79,12 +79,12 @@
                   <div class="row">
                     @foreach ($data['sega'] as $dat)
                     <div class="col xl2 l3 m4 s6">
-                      <div class="card small">
+                      <div class="card small hoverable">
                         <div class="card-image">
                             <img class="lazy" alt="{{ $dat['name_en'] }}" data-src="{{ $dat['image_url'] }}">
                           </div>
                           <div class="card-content">
-                            <b>{{ $dat['name_en'] }}</b>
+                            <b class="truncate">{{ $dat['name_en'] }}</b>
                             <p>CONTENT</p>
                         </div>
                       </div>
@@ -99,12 +99,12 @@
                   <div class="row">
                     @foreach ($data['game'] as $dat)
                     <div class="col xl2 l3 m4 s6">
-                      <div class="card small">
+                      <div class="card small hoverable">
                         <div class="card-image">
                             <img class="lazy" alt="{{ $dat['name_en'] }}" data-src="{{ $dat['image_url'] }}">
                           </div>
                           <div class="card-content">
-                            <b>{{ $dat['name_en'] }}</b>
+                            <b class="truncate">{{ $dat['name_en'] }}</b>
                             <p>CONTENT</p>
                         </div>
                       </div>
@@ -119,12 +119,12 @@
                   <div class="row">
                     @foreach ($data['orig'] as $dat)
                     <div class="col xl2 l3 m4 s6">
-                      <div class="card small">
+                      <div class="card small hoverable">
                         <div class="card-image">
                             <img class="lazy" alt="{{ $dat['name_en'] }}" data-src="{{ $dat['image_url'] }}">
                           </div>
                           <div class="card-content">
-                            <b>{{ $dat['name_en'] }}</b>
+                            <b class="truncate">{{ $dat['name_en'] }}</b>
                             <p>CONTENT</p>
                         </div>
                       </div>
