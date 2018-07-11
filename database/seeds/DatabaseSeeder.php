@@ -11,26 +11,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $data_get = file_get_contents('https://cdn.rawgit.com/rayriffy/maimai-json/be7cbecc/seed.json');
+        $data_get = file_get_contents('https://cdn.rawgit.com/rayriffy/maimai-json/d984152b/seed.json');
         $json_a = json_decode($data_get, true);
         foreach ($json_a['pops'] as $dat) {
             $pops = new App\POPS();
-            $pops->name_en = $dat['name_en'];
-            $pops->name_jp = $dat['name_jp'];
-            $pops->artist_en = $dat['artist_en'];
-            $pops->artist_jp = $dat['artist_jp'];
-            $pops->image_url = $dat['image_url'];
-            $pops->version = $dat['version'];
-            $pops->bpm = $dat['bpm'];
-            $pops->level_easy = $dat['level_easy'];
-            $pops->level_basic = $dat['level_basic'];
-            $pops->level_advanced = $dat['level_advanced'];
-            $pops->level_expert = $dat['level_expert'];
-            $pops->level_master = $dat['level_master'];
-            $pops->level_remaster = $dat['level_remaster'];
-            $pops->listen_youtube = $dat['listen_youtube'];
-            $pops->listen_niconico = $dat['listen_niconico'];
-            $pops->regionlocked = $dat['regionlocked'];
+            $pops->name_en = $dat->name->en;
+            $pops->name_jp = $dat->name->jp;
+            $pops->artist_en = $dat->artist->en;
+            $pops->artist_jp = $dat->artist->jp;
+            $pops->image_url = $dat->image_url;
+            $pops->version = $dat->version;
+            $pops->bpm = $dat->bpm;
+            $pops->level_easy = $dat->level->easy;
+            $pops->level_basic = $dat->level->basic;
+            $pops->level_advanced = $dat->level->advanced;
+            $pops->level_expert = $dat->level->expert;
+            $pops->level_master = $dat->level->master;
+            $pops->level_remaster = $dat->level->remaster;
+            $pops->listen_youtube = $dat->listen->youtube;
+            $pops->listen_niconico = $dat->listen->niconico;
+            $pops->regionlocked = $dat->regionlocked;
             $pops->save();
         }
         foreach ($json_a['nico'] as $dat) {
