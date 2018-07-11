@@ -25,9 +25,10 @@ jobs:
           command: |
             cp .env.example .env
       - run:
-          name: Install Composer Packages
+          name: Manage Composer Packages
           command: |
             composer install
+            composer update
       - run:
           name: Install JavaScript Packages
           command: |
@@ -59,7 +60,7 @@ jobs:
       - run:
           name: Deploy Server
           command: |
-            ssh -i ~/.ssh/id_rsa_c72952e0f033ca911b303a961f34a7fd $DEPLOY_HOST 'cd ~/production/maiwiki.rayriffy.com && git pull && composer install && php71 artisan migrate && yarn && yarn run prod'
+            ssh -i ~/.ssh/id_rsa_c72952e0f033ca911b303a961f34a7fd $DEPLOY_HOST 'cd ~/production/maiwiki.rayriffy.com && git pull && composer install && composer update && php71 artisan migrate && yarn && yarn run prod'
 workflows:
   version: 2
   build-and-deploy:
