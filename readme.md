@@ -22,7 +22,7 @@ Setting Up
 - `npm install` or `yarn`
 - `npm run prod` or `npm run prod`
 - `php artisan migrate`
--  `php artisan db:seed` to get a sample data
+- `php artisan db:seed` to get a sample data
 
 
 
